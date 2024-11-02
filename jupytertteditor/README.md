@@ -1,8 +1,10 @@
 # Overview
 
-The purpose of this library will be to Create, Edit, and Display Truth Tables of any size. 
+The purpose of this library is to Create, Edit, and Display Truth Tables of any size. 
 
-I wrote this software because I was searching for something that would simplify the process of creating truth tables, but I was unable to find anything that did something remotely close to what I wanted. In the end I wrote this to streamline the entire process down to a few lines of code.
+It is able to be used seemlessly inside jupyter notebooks.
+
+I wrote this software because I was searching for something that would simplify the process of creating truth tables, but I was unable to find anything that did the job how I wanted it to do it. In the end I wrote this to streamline the entire process down to a few lines of code.
 
 [Software Demo Video](https://youtu.be/zvBdv4CkKCg)
 
@@ -19,4 +21,6 @@ I programmed the entire thing inside of VS Code using Python 3.11.9. I also had 
 
 # Future Work
 
-- Currently has functionality to create a truth table of any size, but it is incredibly slow to create them after a certain size is reached considering the nature of truth table length being 2^n possible scenarios (n being the number of vaiables in the truth table). There are plans to add multiprocessing to help speed up the process of creating truth tables.
+[x] It is not setup in a way to be made into a python library just yet. This is the next step in the development process.
+[x] The entire program needs to be re-written in such a way that you can remove columns and it wont break the previously written lines of code.
+[ ] Currently has functionality to create a truth table of any size, but it is incredibly slow to create them after a certain size is reached considering the nature of truth table length being 2^n possible scenarios (n being the number of vaiables in the truth table). There are plans to add multiprocessing to help speed up the process of creating truth tables.
