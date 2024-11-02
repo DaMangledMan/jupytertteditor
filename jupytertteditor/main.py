@@ -110,19 +110,25 @@ class TruthTable:
     def _format_xy(self, not_x: bool, col_name_x: str, not_y: bool, col_name_y: str):
         col_x = self.table[col_name_x][1]
         col_y = self.table[col_name_y][1]
+        new_col_x = []
+        new_col_y = []
         if not_x:
-            for i in range(self.num_of_rows):
-                if col_x[i]:
-                    col_x[i] = False
+            for b in col_x:
+                if b:
+                    new_col_x.append(False)
                 else:
-                    col_x[i] = True
+                    new_col_x.append(True)
+        else: 
+            new_col_x = col_x
         if not_y:
-            for i in range(self.num_of_rows):
-                if col_y[i]:
-                    col_y[i] = False
+            for b in col_y:
+                if b:
+                    new_col_y.append(False)
                 else:
-                    col_y[i] = True
-        return [col_x, col_y]
+                    new_col_y.append(True)
+        else:
+            new_col_y = col_y
+        return [new_col_x, new_col_y]
 
     def _xor(self, p: bool, q: bool) -> bool:
         return p != q
@@ -152,8 +158,3 @@ class TruthTable:
                 print(str(self.table[i][1][n]).rjust(header_len[x]), end=" |")
                 x += 1
             print("")
-
-
-TT = TruthTable(3)
-TT.create_column("A or not B", False, "A", "or", True, "B")
-TT.display()
