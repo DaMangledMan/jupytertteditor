@@ -51,7 +51,7 @@ class TruthTable:
         match operator:
             # creates the column for the and operator
             case "and":
-                xy = self._formatXY(not_x, col_name_x, not_y, col_name_y)
+                xy = self._format_xy(not_x, col_name_x, not_y, col_name_y)
                 for i in range(self.num_of_rows):
                     if xy[0][i] and xy[1][i]:
                         col.append(True)
@@ -59,7 +59,7 @@ class TruthTable:
                         col.append(False)
             # creates the column for the or operator
             case "or":
-                xy = self._formatXY(not_x, col_name_x, not_y, col_name_y)
+                xy = self._format_xy(not_x, col_name_x, not_y, col_name_y)
                 for i in range(self.num_of_rows):
                     if xy[0][i] or xy[1][i]:
                         col.append(True)
@@ -67,7 +67,7 @@ class TruthTable:
                         col.append(False)
             # creates the column for the xor operator
             case "xor":
-                xy = self._formatXY(not_x, col_name_x, not_y, col_name_y)
+                xy = self._format_xy(not_x, col_name_x, not_y, col_name_y)
                 for i in range(self.num_of_rows):
                     if self._xor(xy[0][i], xy[1][i]):
                         col.append(True)
@@ -75,7 +75,7 @@ class TruthTable:
                         col.append(False)
             # creates the column for the implies operator
             case "implies":
-                xy = self._formatXY(not_x, col_name_x, not_y, col_name_y)
+                xy = self._format_xy(not_x, col_name_x, not_y, col_name_y)
                 for i in range(self.num_of_rows):
                     if self._implies(xy[0][i], xy[1][i]):
                         col.append(True)
@@ -83,7 +83,7 @@ class TruthTable:
                         col.append(False)
             # creates the column for the iff operator
             case "iff":
-                xy = self._formatXY(not_x, col_name_x, not_y, col_name_y)
+                xy = self._format_xy(not_x, col_name_x, not_y, col_name_y)
                 for i in range(self.num_of_rows):
                     if self._iff(xy[0][i], xy[1][i]):
                         col.append(True)
@@ -152,3 +152,8 @@ class TruthTable:
                 print(str(self.table[i][1][n]).rjust(header_len[x]), end=" |")
                 x += 1
             print("")
+
+
+TT = TruthTable(3)
+TT.create_column("A or not B", False, "A", "or", True, "B")
+TT.display()
