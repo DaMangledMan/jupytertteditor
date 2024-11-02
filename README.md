@@ -21,6 +21,6 @@ I programmed the entire thing inside of VS Code using Python 3.11.9. I also had 
 
 # Future Work
 
-[x] It is not setup in a way to be made into a python library just yet. This is the next step in the development process.
-[x] The entire program needs to be re-written in such a way that you can remove columns and it wont break the previously written lines of code.
-[ ] Currently has functionality to create a truth table of any size, but it is incredibly slow to create them after a certain size is reached considering the nature of truth table length being 2^n possible scenarios (n being the number of vaiables in the truth table). There are plans to add multiprocessing to help speed up the process of creating truth tables.
+- [x] It is not setup in a way to be made into a python library just yet. This is the next step in the development process.  
+- [x] The entire program needs to be re-written in such a way that you can remove columns and it wont break the previously written lines of code.  
+- [] Currently has functionality to create a truth table of any size, but it is incredibly slow to create them after a certain size is reached considering the nature of truth table length being 2^n possible scenarios (n being the number of vaiables in the truth table). There are plans to add multiprocessing to help speed up the process of creating truth tables.
